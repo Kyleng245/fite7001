@@ -1,10 +1,10 @@
-# This is a script to calculate simple moving average trading strategy
+# This is a script to calculate Simple Moving Average (SMA) trading strategy
 import yfinance as yf
 import vectorbt as vbt
 
 # Fetch historical data from Yahoo Finance
 ticker_symbol = 'AAPL'  # Apple Inc.
-data = yf.download(ticker_symbol, start='2020-01-01', end='2023-01-01')
+data = yf.download(ticker_symbol, start='2020-01-01', end='2023-01-01') # Adjust the historical data start time and end time interval
 
 # Select only the 'Close' column for simplicity
 close_prices = data['Close']
