@@ -12,14 +12,14 @@ This project aims to bridge that gap by introducing an accessible approach: util
 
 ## Installation
 
-    1. create a conda environment for the project and install pytorch with nvidia cuda toolkit version 12.1
+1. create a conda environment for the project and install pytorch with nvidia cuda toolkit version 12.1
 
 ```bash
 conda create --name fite7001 -c conda-forge python=3.11
 conda install pytorch torchvision torchaudio pytorch-cuda=12.1 -c pytorch -c nvidia
 ```
 
-    2. Activate the virtual environment and install the dependencies (i.e., langchain, and hugginface etc.)
+2. Activate the virtual environment and install the dependencies (i.e., langchain, and hugginface etc.)
 
 ```bash
 pip install jupyter
@@ -29,21 +29,23 @@ export CUDACXX="/usr/local/cuda/bin/nvcc"
 CMAKE_ARGS="-DLLAMA_CUBLAS=on" FORCE_CMAKE=1 pip install llama-cpp-python
 ```
 
-    2. Install other dependencies
+## Usage
+**Important:** Please go to [TheBloke/Llama-2-13B-chat-GGUF](https://huggingface.co/TheBloke/Llama-2-13B-chat-GGUF) to download the `llama-2-13b-chat.Q5_K_M.gguf` model file from Huggingface before executing the playbooks.
+
+After downloading the model file, place it in the `./model` directory of this project.
+
+---
+## Further Installation For Running Streamlit application
+ Install other dependencies
 
 The `requirements.txt` file located in the `./Streamlit` folder contains the necessary Python packages required to run the Streamlit application. You can install these dependencies using the following command:
 
 ```bash
 pip install -r Streamlit/requirements.txt
 ```
+--- 
 
-## Usage
-**Important:** Please go to [TheBloke/Llama-2-13B-chat-GGUF](https://huggingface.co/TheBloke/Llama-2-13B-chat-GGUF) to download the `llama-2-13b-chat.Q5_K_M.gguf` model file from Huggingface before executing the playbooks.
-
-After downloading the model file, place it in the `./model` directory of this project.
-
-
-## Running Locally
+## Running the application Locally
 
 To run the application locally, follow these steps:
 

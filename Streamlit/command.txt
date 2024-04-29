@@ -1,0 +1,8 @@
+ssh -N -L 8501:localhost:8501 u3602999@{hostname}
+scp -r /Users/tszleungchan/finance-gpt/Streamlit/StreamlitApp.py u3602999@gpu2gate1.cs.hku.hk:/userhome/cs2/u3602999/louis/finance-gpt/Streamlit
+scp -r /Users/tszleungchan/finance-gpt/code u3602999@gpu2gate1.cs.hku.hk:/userhome/cs2/u3602999/louis/finance-gpt
+scp -r /Users/tszleungchan/finance-gpt/Streamlit/requirements.txt u3602999@gpu2gate1.cs.hku.hk:/userhome/cs2/u3602999/louis/finance-gpt/Streamlit
+
+streamlit run StreamlitApp.py 
+gpu-interactive
+conda activate fite7001
