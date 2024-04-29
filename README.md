@@ -1,15 +1,14 @@
 # FITE7001 - Finance GPT to Automate Trading Strategy as Codes
 
-This project aims to bridge that gap by introducing an accessible approach: utilizing LLM to automate trading strategies with no prior coding experience required, and with the goal of enhancing efficiency and accessibility.
+## Description
+This project aims to bridge that gap by introducing an accessible approach: utilizing LLM to automate trading strategies with no prior coding experience required, and with the goal of enhancing efficiency and accessibility. 
 
 ## Table of Contents
 
 - [Installation](#installation)
 - [Usage](#usage)
-- [Folder Structure](#folder-structure)
-
-
-
+- [RunningLocally](#runninglocally)
+- [License](#license)
 
 ## Installation
 
@@ -29,18 +28,79 @@ pip install langchainhub langchain sentence-transformers tiktoken chromadb GitPy
 export CUDACXX="/usr/local/cuda/bin/nvcc"
 CMAKE_ARGS="-DLLAMA_CUBLAS=on" FORCE_CMAKE=1 pip install llama-cpp-python
 ```
-    
+
+    2. Install other dependencies
+
+The `requirements.txt` file located in the `./Streamlit` folder contains the necessary Python packages required to run the Streamlit application. You can install these dependencies using the following command:
+
+```bash
+pip install -r Streamlit/requirements.txt
+```
+
 ## Usage
+**Important:** Please go to [TheBloke/Llama-2-13B-chat-GGUF](https://huggingface.co/TheBloke/Llama-2-13B-chat-GGUF) to download the `llama-2-13b-chat.Q5_K_M.gguf` model file from Huggingface before executing the playbooks.
 
-The code playbook demonstrating how to run llama 2 locally is in `playbooks/llama2.ipynb`. Please follow the steps in the playbook to generate the trading strategies accordingly.
-
-Important: Please go to https://huggingface.co/TheBloke/Llama-2-13B-chat-GGUF to download the `llama-2-13b-chat.Q5_K_M.gguf` from Huggingface before executing the playbooks.
-
+After downloading the model file, place it in the `./model` directory of this project.
 
 
+## Running Locally
 
-## Folder Structure
+To run the application locally, follow these steps:
 
-1. `models` is where the model artifacts are stored. For example, LLM and embeddings are stored in this folder.
-2. `code` is where the code snippets for the trading strategies located. For example, `vectorbt-test.py` is a simple moving average strategy. We will utilize the parser from langchain to feed these code into our prompt templates for LLM to have a better context. In the future, any code related to trading strategies are stored here.
-3. `playbooks` contains mainly the jupyter notebook to showcase how the LLM works.
+### Terminal 1
+
+1. Open Terminal and SSH into the remote server:
+    ```bash
+    ssh -X [hku_account_id]@gpu2gate1.cs.hku.hk
+    ```
+    Enter password when prompted
+
+2. Get the hostname of the server:
+    ```bash
+    hostname -i
+    ```
+    Note down the hostname (e.g., `10.xx.xx.xx`).
+
+3. Log in to the GPU farm:
+    ```bash
+    srun --gres=gpu:2 --cpus-per-task=8 --pty --mail-type=ALL bash
+    ```
+
+4. Navigate to the project directory:
+    ```bash
+    cd ~/louis/finance-gpt/Streamlit
+    ```
+
+5. Activate the conda environment:
+    ```bash
+    conda activate fite7001-clone3
+    ```
+
+6. Run the Streamlit application:
+    ```bash
+    streamlit run StreamlitApp.py
+    ```
+
+### Terminal 2
+
+1. Open a new Terminal window.
+
+2. Set up port forwarding from the remote server to localhost:
+    ```bash
+    ssh -N -L 8501:localhost:8501 [hku_account_id]@10.xx.xx.xx
+    ```
+    Replace `10.xx.xx.xx` with the hostname obtained earlier.
+
+### Browser
+
+1. Open your web browser and go to:
+    ```
+    http://localhost:8501
+    ```
+
+This will launch the Streamlit application on your local machine, allowing you to interact with it via your web browser.
+
+
+## License
+The Streamlit application in this project (`StreamlitApp.py`) includes code adapted from [Vikram Bhat's RAG Implementation with ConversationUI](https://github.com/vikrambhat2/RAG-Implementation-with-ConversationUI/blob/main/Streamlit%20Applications/StreamlitApp.py). Please refer to the original repository for more details on its licensing.
+

@@ -1,0 +1,12 @@
+alpaca==1.0.0
+langchain==0.1.16
+langchain_community==0.0.32
+matplotlib==3.8.4
+numpy==1.23.5
+PyPDF2==3.0.1
+python-dotenv==1.0.1
+sentence_transformers==2.6.1
+streamlit==1.33.0
+vectorbt==0.26.1
+yfinance==0.2.37
+pyperclip==1.8.2

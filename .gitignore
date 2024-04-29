@@ -1,2 +1,5 @@
 /model/*
 .env
+.DS_Store
+Streamlit/vectorstore/db_faiss/index.faiss
+Streamlit/vectorstore/db_faiss/index.pkl
