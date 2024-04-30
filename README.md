@@ -8,6 +8,7 @@ This project aims to bridge that gap by introducing an accessible approach: util
 - [Installation](#installation)
 - [Further Installation for Application](#further-installation-for-running-streamlit-application-not-necessary-for-running-playbooks)
 - [Usage](#usage)
+- [Setting up environment variables](#usage)
 - [Running the Streamlit Application Locally](#running-the-streamlit-Application-locally)
 - [Playbook Testing Result](#testing-result-of-the-playbooks)
 - [License](#license)
@@ -45,6 +46,16 @@ pip install -r Streamlit/requirements.txt
 **Important:** Please go to [TheBloke/Llama-2-13B-chat-GGUF](https://huggingface.co/TheBloke/Llama-2-13B-chat-GGUF) to download the `llama-2-13b-chat.Q5_K_M.gguf` model file from Huggingface before executing the playbooks.
 
 After downloading the model file, place it in the `./model` directory of this project.
+
+## Setting Up Environment Variables
+After obtaining your API key and secret key from alpaca platform (traders), create a .env file in the root directory of your project and add the following lines:
+```bash
+ALPACA_API_KEY=your_api_key
+ALPACA_SECRET_KEY=your_secret_key
+```
+Replace your_api_key and your_secret_key with the API key and secret key you obtained from the Alpaca website.
+
+Note: Ensure that you keep your API keys secure and do not expose them publicly.
 
 ## Running the Streamlit Application locally
 
