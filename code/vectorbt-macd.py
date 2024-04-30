@@ -1,7 +1,8 @@
 # This is a script to calculate Moving Average Convergence Divergence trading strategy
 import vectorbt as vbt
 import yfinance as yf
-        # Fetch historical data from Yahoo Finance
+
+# Fetch historical data from Yahoo Finance
 ticker_symbol = 'AAPL'  # Apple Inc.
 data = yf.download(ticker_symbol, start='2020-01-01', end='2023-01-01')
 
@@ -13,7 +14,7 @@ macd = vbt.MACD.run(close_prices)
 
 # Plot with Moving Average Convergence Divergence on price
 kwargs1 = {"title_text" : "Moving Average Convergence Divergence on Price", "title_font_size" : 13}
-macd .plot(**kwargs1).show()
+macd.plot(**kwargs1).show()
 
 # Generate buy signals when MACD histogram is positive and sell signals when MACD histogram is negative
 entries = macd.macd_above(0)
@@ -30,7 +31,7 @@ print(performance)
 
 # Plot the portfolio and trades
 st.write("Charts:")
+st.plotly_chart(macd.plot(**kwargs1))
 st.plotly_chart(portfolio.plot())
-st.plotly_chart(macd .plot(**kwargs1))
 
 
