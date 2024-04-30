@@ -8,7 +8,7 @@ This project aims to bridge that gap by introducing an accessible approach: util
 - [Installation](#installation)
 - [Further Installation for Application](#further-installation-for-running-streamlit-application-not-necessary-for-running-playbooks)
 - [Usage](#usage)
-- [Setting up environment variables](#usage)
+- [Setting up environment variables](#setting-up-environment-variables)
 - [Running the Streamlit Application Locally](#running-the-streamlit-Application-locally)
 - [Playbook Testing Result](#testing-result-of-the-playbooks)
 - [License](#license)
