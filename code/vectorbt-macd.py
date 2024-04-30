@@ -31,4 +31,6 @@ print(performance)
 # Plot the portfolio and trades
 st.write("Charts:")
 st.plotly_chart(portfolio.plot())
+st.plotly_chart(macd .plot(**kwargs1))
+
 

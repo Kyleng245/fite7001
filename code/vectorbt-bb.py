@@ -43,4 +43,5 @@ st.write(performance)
 
 # Plot the portfolio and trades
 st.write("Charts:")
+st.plotly_chart(bbands.plot(**kwargs1))
 st.plotly_chart(portfolio.plot())
