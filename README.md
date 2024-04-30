@@ -78,7 +78,7 @@ To run the application locally, follow these steps:
 
 5. Navigate to the project directory:
     ```bash
-    cd ~/fite7001-project/finance-gpt/Streamlit
+    cd ~{remote_directory_location}
     ```
 
 6. Activate the conda environment:
