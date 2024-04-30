@@ -58,28 +58,35 @@ To run the application locally, follow these steps:
     ```
     Enter password when prompted
 
-2. Get the hostname of the server:
+2. Upload files to the remote server:
+    ```bash
+    scp -r {your_local_directory_location} {hku_account_id}@gpu2gate1.cs.hku.hk:{remote_directory_location}
+    ```
+    Upload your local project to remote server
+
+3. Get the hostname of the server:
     ```bash
     hostname -i
     ```
     Note down the hostname (e.g., `10.xx.xx.xx`).
 
-3. Log in to the GPU farm:
+
+4. Log in to the GPU farm:
     ```bash
     srun --gres=gpu:2 --cpus-per-task=8 --pty --mail-type=ALL bash
     ```
 
-4. Navigate to the project directory:
+5. Navigate to the project directory:
     ```bash
     cd ~/fite7001-project/finance-gpt/Streamlit
     ```
 
-5. Activate the conda environment:
+6. Activate the conda environment:
     ```bash
-    conda activate fite7001-clone3
+    conda activate fite7001
     ```
 
-6. Run the Streamlit application:
+7. Run the Streamlit application:
     ```bash
     streamlit run StreamlitApp.py
     ```
