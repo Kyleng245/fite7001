@@ -6,8 +6,9 @@ This project aims to bridge that gap by introducing an accessible approach: util
 ## Table of Contents
 
 - [Installation](#installation)
+- [Installation](#installation)
 - [Usage](#usage)
-- [RunningLocally](#runninglocally)
+- [Running Application Locally](#running Application locally)
 - [License](#license)
 
 ## Installation
