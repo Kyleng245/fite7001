@@ -36,5 +36,5 @@ print(performance)
 
 # Plot the portfolio and trades
 st.write("Charts:")
-st.plotly_chart(portfolio.plot())
 st.plotly_chart(rsi.plot(**kwargs1))
+st.plotly_chart(portfolio.plot())
