@@ -42,5 +42,5 @@ st.write("Performance Metrics:")
 st.write(performance)
 
 # Plot the portfolio and trades
-portfolio.plot().show()
-
+st.write("Charts:")
+st.plotly_chart(portfolio.plot())

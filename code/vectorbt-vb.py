@@ -26,4 +26,5 @@ st.write(performance)
 print(performance)
 
 # Plot the portfolio and trades
-portfolio.plot().show()
+st.write("Charts:")
+st.plotly_chart(portfolio.plot())
