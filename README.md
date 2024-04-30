@@ -6,9 +6,10 @@ This project aims to bridge that gap by introducing an accessible approach: util
 ## Table of Contents
 
 - [Installation](#installation)
-- [Installation](#installation)
+- [Further Installation for Application](#further-installation-for-running-streamlit-application-not-necessary-for-running-playbooks)
 - [Usage](#usage)
-- [Running Application Locally](#running Application locally)
+- [Running the Streamlit Application Locally](#running-the-streamlit-Application-locally)
+- [Playbook Testing Result](#testing-result-of-the-playbooks)
 - [License](#license)
 
 ## Installation
@@ -29,15 +30,9 @@ pip install langchainhub langchain sentence-transformers tiktoken chromadb GitPy
 export CUDACXX="/usr/local/cuda/bin/nvcc"
 CMAKE_ARGS="-DLLAMA_CUBLAS=on" FORCE_CMAKE=1 pip install llama-cpp-python
 ```
-
-## Usage
-**Important:** Please go to [TheBloke/Llama-2-13B-chat-GGUF](https://huggingface.co/TheBloke/Llama-2-13B-chat-GGUF) to download the `llama-2-13b-chat.Q5_K_M.gguf` model file from Huggingface before executing the playbooks.
-
-After downloading the model file, place it in the `./model` directory of this project.
-
 ---
-## Further Installation For Running Streamlit application
- Install other dependencies
+## Further Installation For Running Streamlit Application (not necessary for running playbooks)
+3. Install other dependencies
 
 The `requirements.txt` file located in the `./Streamlit` folder contains the necessary Python packages required to run the Streamlit application. You can install these dependencies using the following command:
 
@@ -46,7 +41,12 @@ pip install -r Streamlit/requirements.txt
 ```
 --- 
 
-## Running the application Locally
+## Usage
+**Important:** Please go to [TheBloke/Llama-2-13B-chat-GGUF](https://huggingface.co/TheBloke/Llama-2-13B-chat-GGUF) to download the `llama-2-13b-chat.Q5_K_M.gguf` model file from Huggingface before executing the playbooks.
+
+After downloading the model file, place it in the `./model` directory of this project.
+
+## Running the Streamlit Application locally
 
 To run the application locally, follow these steps:
 
@@ -71,7 +71,7 @@ To run the application locally, follow these steps:
 
 4. Navigate to the project directory:
     ```bash
-    cd ~/louis/finance-gpt/Streamlit
+    cd ~/fite7001-project/finance-gpt/Streamlit
     ```
 
 5. Activate the conda environment:
@@ -103,6 +103,8 @@ To run the application locally, follow these steps:
 
 This will launch the Streamlit application on your local machine, allowing you to interact with it via your web browser.
 
+## Testing result of the playbooks
+Testing results of the playbooks can be found in the /playbooks folder within the Jupyter notebooks.
 
 ## License
 The Streamlit application in this project (`StreamlitApp.py`) includes code adapted from [Vikram Bhat's RAG Implementation with ConversationUI](https://github.com/vikrambhat2/RAG-Implementation-with-ConversationUI/blob/main/Streamlit%20Applications/StreamlitApp.py). Please refer to the original repository for more details on its licensing.
